@@ -1,20 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { WeatherService } from '../services/weather.service';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-weather',
-  templateUrl: './weather.page.html',
-  styleUrls: ['./weather.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [CommonModule, IonicModule, FormsModule],
+  templateUrl: './weather.page.html',
+  styleUrls: ['./weather.page.scss']
 })
-export class WeatherPage implements OnInit {
+//constructors
+export class WeatherPage {
+  city: string = '';
+  temperature: string = '';
+  description: string = '';
+  location: string = '';
+  error: string = '';
+//get the weather service call from the serivces.ts
+  constructor(private weatherService: WeatherService) {}
 
-  constructor() { }
+  
+  getWeather() {
+    if (!this.city) return;
 
-  ngOnInit() {
+    this.weatherService.getWeather(this.city).subscribe({
+      next: data => {
+        this.temperature = (data.main.temp - 273.15).toFixed(2);
+        this.description = data.weather[0].description;
+        this.location = data.name;
+        this.error = '';
+      },
+      error: err => {
+        this.error = 'City not found or API error.';
+        console.error(err);
+      }
+    });
   }
-
 }
