@@ -10,7 +10,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
-    provideHttpClient(),
+    provideHttpClient(),//inject httpclient in order to fetch the API
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
 });

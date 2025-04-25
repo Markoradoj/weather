@@ -26,7 +26,7 @@ submitForm(){
     email: this.email,
     address: this.address
   };
-//create a local storage for theese items
+//create a local storage for these items
   localStorage.setItem('userData',JSON.stringify(userData));
   this.submitted = true;
 

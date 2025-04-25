@@ -8,6 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
+<!--Creates a form inputs and it passes along with ngOnit-->
 <ion-content class ="ion-padding">
   <div *ngIf="!submitted">
 <ion-item>
@@ -24,7 +25,7 @@
 <ion-button expand="block" (click)="submitForm()">Submit</ion-button>
 </div>
 
-
+<!---User clicks the forum disappers and the text pops up-->
   <div *ngIf="submitted" class="ion-text-center">
   <h2>Welcome, {{name}}</h2>
 </div>

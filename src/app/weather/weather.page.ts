@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WeatherService } from '../services/weather.service';
+import { WeatherService } from '../services/weather.service'; //get the service inported
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
@@ -27,7 +27,7 @@ export class WeatherPage {
     //call the api using subscribe 
     this.weatherService.getWeather(this.city).subscribe({
       next: data => {
-        this.temperature = (data.main.temp - 273.15).toFixed(2);
+        this.temperature = (data.main.temp - 273.15).toFixed(2); //rounds the temprature value to the nearest value
         this.description = data.weather[0].description;
         this.location = data.name;
         this.error = '';
