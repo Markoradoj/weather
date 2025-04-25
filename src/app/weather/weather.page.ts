@@ -24,7 +24,7 @@ export class WeatherPage {
 
   getWeather() {
     if (!this.city) return;
-
+    //call the api using subscribe 
     this.weatherService.getWeather().subscribe({
       next: data => {
         this.temperature = (data.main.temp - 273.15).toFixed(2);
@@ -32,6 +32,7 @@ export class WeatherPage {
         this.location = data.name;
         this.error = '';
       },
+      //if the city is not found throws an error
       error: err => {
         this.error = 'City not found or API error.';
         console.error(err);

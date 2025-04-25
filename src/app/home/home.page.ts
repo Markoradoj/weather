@@ -10,7 +10,7 @@ import { IonHeader, IonToolbar, IonTitle, IonContent,IonButton,IonButtons } from
 })
 export class HomePage {
   constructor(private router: Router) {}
-
+//methods that allow to navigate the page if a user presses a button
 
   goWeather() {
     this.router.navigate(['/weather']);

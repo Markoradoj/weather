@@ -25,3 +25,29 @@
 #container a {
   text-decoration: none;
 }
+
+  .button-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    gap: 10px;                
+    margin-top: 20px;         
+  }
+
+
+  image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  
+    img {
+      width: 120px;
+      height: auto;
+    }
+
+
+    ion-content{
+      --background : #9dc8ee;
+    }
+  }
