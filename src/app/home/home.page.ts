@@ -16,6 +16,9 @@ export class HomePage {
     this.router.navigate(['/weather']);
   }
 
-  
+  goJoin(){
+    this.router.navigate(['/join']);
+  }
+
 }
 

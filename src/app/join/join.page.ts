@@ -12,6 +12,10 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 })
 export class JoinPage implements OnInit {
 
+  name: String = "";
+  email: String = "";
+  address: String = "";
+
   constructor() { }
 
   ngOnInit() {
