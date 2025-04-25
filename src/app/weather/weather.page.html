@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>weather</ion-title>
+    <ion-title>Weather Checker</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">weather</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input
+      [(ngModel)]="city"
+      placeholder="Enter city name">
+    </ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="getWeather()">Check Weather</ion-button>
+
+  <div *ngIf="temperature">
+    <h2>{{ location }}</h2>
+    <p>🌡️ Temperature: {{ temperature }} °C</p>
+    <p>☁️ Condition: {{ description }}</p>
+  </div>
+
+  <div *ngIf="error" class="ion-text-center">
+    <p color="danger">{{ error }}</p>
+  </div>
 </ion-content>
