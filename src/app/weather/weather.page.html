@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Weather Checker</ion-title>
+    <ion-title>Weather Checker Section</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,7 +8,7 @@
   <ion-item>
     <ion-input
       [(ngModel)]="city"
-      placeholder="Enter city name">
+      placeholder="Enter city name in this box">
     </ion-input>
   </ion-item>
 
@@ -16,10 +16,11 @@
 
   <div *ngIf="temperature">
     <h2>{{ location }}</h2>
-    <p>🌡️ Temperature: {{ temperature }} °C</p>
-    <p>☁️ Condition: {{ description }}</p>
+    <p> Temperature: {{ temperature }} °C</p>
+    <p> Condition: {{ description }}</p>
   </div>
 
+  <!--Check error if the city is mismatch-->
   <div *ngIf="error" class="ion-text-center">
     <p color="danger">{{ error }}</p>
   </div>
