@@ -21,11 +21,11 @@ export class WeatherPage {
 //get the weather service call from the serivces.ts
   constructor(private weatherService: WeatherService) {}
 
-  
+
   getWeather() {
     if (!this.city) return;
 
-    this.weatherService.getWeather(this.city).subscribe({
+    this.weatherService.getWeather().subscribe({
       next: data => {
         this.temperature = (data.main.temp - 273.15).toFixed(2);
         this.description = data.weather[0].description;

@@ -6,12 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WeatherService {
-  private apiKey = 'YOUR_API_KEY';  // Replace with your OpenWeather API key
+  private apiKey = 'b63fae70a0766d821d609afa3b03f31a';
+   // API key
   private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) {}
 
-  getWeather(city: string): Observable<any> {
+  getWeather(): Observable<any> {
+    const city = "Dublin";
     const url = `${this.apiUrl}?q=${city}&appid=${this.apiKey}`;
     return this.http.get(url);
   }
