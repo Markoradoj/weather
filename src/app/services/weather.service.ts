@@ -13,8 +13,7 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
 
   //method to get the waeather data
-  getWeather(): Observable<any> {
-    const city = "Dublin";
+  getWeather(city: string): Observable<any> {
     const url = `${this.apiUrl}?q=${city}&appid=${this.apiKey}`;
     return this.http.get(url);
   }

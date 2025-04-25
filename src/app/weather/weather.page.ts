@@ -25,7 +25,7 @@ export class WeatherPage {
   getWeather() {
     if (!this.city) return;
     //call the api using subscribe 
-    this.weatherService.getWeather().subscribe({
+    this.weatherService.getWeather(this.city).subscribe({
       next: data => {
         this.temperature = (data.main.temp - 273.15).toFixed(2);
         this.description = data.weather[0].description;
