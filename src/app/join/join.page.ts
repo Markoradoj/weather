@@ -12,13 +12,28 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 })
 export class JoinPage implements OnInit {
 
+  //constructors
   name: String = "";
   email: String = "";
   address: String = "";
+  submitted = false;
 
   constructor() { }
+//get 3 data types 
+submitForm(){
+  const userData = {
+    name: this.name,
+    email: this.email,
+    address: this.address
+  };
+//create a local storage for theese items
+  localStorage.setItem('userData',JSON.stringify(userData));
+  this.submitted = true;
+
+}
 
   ngOnInit() {
+    
   }
 
 }
