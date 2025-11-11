@@ -1,1 +1,1 @@
-Very simple Weather application with linking data with via XML
+Very simple Weather application with linking data with via JSON data
